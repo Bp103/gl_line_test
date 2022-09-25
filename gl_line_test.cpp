@@ -67,15 +67,16 @@ void cubo(int poly, int pHight, int sHight, int pOffset, float spin, float spinb
     	yoffset=int((sin(((j*spinb)+wspin)*rad)*(radib*tilt)));
   	}
   	glBegin(GL_LINES);
-  	for(float i=0;i<(poly+1);i++){
+  	for(float i=0;i<(poly+1);i++)
+	{
 		int x=int((cos(((i/poly)+(j*spin)+wspin)*rad)*radi))+xoffset+xcenter;
-    	int y=int((sin(((i/poly)+(j*spin)+wspin)*rad)*(radi*tilt)))+yoffset+ycenter;
-    	if(i==0){ox=x; oy=y;}
-    	
+    		int y=int((sin(((i/poly)+(j*spin)+wspin)*rad)*(radi*tilt)))+yoffset+ycenter;
+    		if(i==0){ox=x; oy=y;}
+    		
 		if(shadow)
 		{
 			glColor3f(r/4,g/4,b/4);
-    		glVertex2f(ox,oy+sHight+pOffset);
+    			glVertex2f(ox,oy+sHight+pOffset);
 			glVertex2f(x,y+sHight+pOffset);
 		}
 		if(cross)
@@ -84,30 +85,29 @@ void cubo(int poly, int pHight, int sHight, int pOffset, float spin, float spinb
 			int tempx=x;
 			int tempy=y;
 			x=int((cos((((i+(poly/2))/poly)+(j*spin)+wspin)*rad)*radi))+xcenter+xoffset;
-    		y=int((sin((((i+(poly/2))/poly)+(j*spin)+wspin)*rad)*(radi*tilt)))+ycenter+yoffset;
-    		glVertex2f(ox,oy+sHight+pOffset);
+    			y=int((sin((((i+(poly/2))/poly)+(j*spin)+wspin)*rad)*(radi*tilt)))+ycenter+yoffset;
+    			glVertex2f(ox,oy+sHight+pOffset);
 			glVertex2f(x,y+sHight+pOffset);
 			x=int((cos((((i+(poly/4))/poly)+(j*spin)+wspin)*rad)*radi))+xcenter+xoffset;
-    		y=int((sin((((i+(poly/4))/poly)+(j*spin)+wspin)*rad)*(radi*tilt)))+ycenter+yoffset;
-    		glVertex2f(ox,oy+sHight+pOffset);
+    			y=int((sin((((i+(poly/4))/poly)+(j*spin)+wspin)*rad)*(radi*tilt)))+ycenter+yoffset;
+    			glVertex2f(ox,oy+sHight+pOffset);
 			glVertex2f(x,y+sHight+pOffset);
 			x=tempx;
-    		y=tempy;
-			
+    			y=tempy;
 		}
-    	if(shape)
-    	{
-    		glColor3f(r,g,b);
-    		glVertex2f(x,y+(pHight+sHight));
+    		if(shape)
+    		{
+    			glColor3f(r,g,b);
+    			glVertex2f(x,y+(pHight+sHight));
 			glVertex2f(ox,oy+(pHight+sHight));
-    		glVertex2f(x,y+pHight);
+    			glVertex2f(x,y+pHight);
 			glVertex2f(x,y+(pHight+sHight));
-    		glVertex2f(x,y+pHight);
+    			glVertex2f(x,y+pHight);
 			glVertex2f(ox,oy+pHight);
-    	}
+    		}
 		
 		ox=x;
-    	oy=y;					
+    		oy=y;					
 	} 
 	glFlush();
 	glEnd();                                
