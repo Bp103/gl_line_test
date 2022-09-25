@@ -114,7 +114,7 @@ void cubo(int poly, int pHight, int sHight, int pOffset, float spin, float spinb
 }
 
 float frame1,frame2,fps, ffps, ifps;
-int timer, realTime, realTimesec;
+int realTime, realTimesec;
 
 void display()
 { 
@@ -122,7 +122,6 @@ void display()
 	frame2=glutGet(GLUT_ELAPSED_TIME);
 	fps=(frame2-frame1); 
 	frame1=glutGet(GLUT_ELAPSED_TIME);
- 	timer+=1*fps;
  	
  	//fps counter
  	realTime=glutGet(GLUT_ELAPSED_TIME);
