@@ -2,8 +2,8 @@
     trigonometry go brrrrr
     Bp103	9-24-2022
     
-    requires a really old version of glut. (this one)
-    https://chortle.ccsu.edu/Bloodshed/glutming.zip
+    Requires an implementation of GLUT.
+    FreeGLUT works fine.
 */
 
 #include <stdlib.h>
